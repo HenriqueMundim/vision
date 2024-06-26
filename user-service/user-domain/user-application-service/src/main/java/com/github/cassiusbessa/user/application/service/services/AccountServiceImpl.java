@@ -7,12 +7,13 @@ import com.github.cassiusbessa.user.application.service.dtos.LoginResponse;
 import com.github.cassiusbessa.user.application.service.mapper.AccountDataMapper;
 import com.github.cassiusbessa.user.application.service.ports.input.AccountService;
 import com.github.cassiusbessa.user.application.service.ports.output.AccountRepository;
-import com.github.cassiusbessa.user.application.service.ports.output.ProfileRepository;
 import com.github.cassiusbessa.user.application.service.services.crypto.CryptoService;
+import com.github.cassiusbessa.common.application.service.TokenService;
 import com.github.cassiusbessa.user.domain.core.Account;
-import com.github.cassiusbessa.vision.common.domain.core.valueobjects.Email;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 import java.util.Optional;
 
@@ -22,12 +23,14 @@ public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
     private final CryptoService cryptoService;
     private final AccountDataMapper accountDataMapper;
+    private final TokenService tokenService;
 
     @Autowired
-    public AccountServiceImpl(AccountRepository accountRepository, CryptoService cryptoService, AccountDataMapper accountDataMapper) {
+    public AccountServiceImpl(AccountRepository accountRepository, CryptoService cryptoService, AccountDataMapper accountDataMapper, TokenService tokenService) {
         this.accountRepository = accountRepository;
         this.cryptoService = cryptoService;
         this.accountDataMapper = accountDataMapper;
+        this.tokenService = tokenService;
     }
     @Override
     public AccountCreatedResponse createAccount(AccountCreateCommand command) {
@@ -62,6 +65,6 @@ public class AccountServiceImpl implements AccountService {
         }
 
         log.info("Logged in successfully with email: {}", credentials.getEmail());
-        return new LoginResponse("token", "Logged in successfully");
+        return new LoginResponse(tokenService.generateToken(account.get().getId().getValue()), "Logged in successfully");
     }
 }

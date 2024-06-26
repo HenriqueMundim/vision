@@ -58,12 +58,22 @@
             </dependency>
             <dependency>
                 <groupId>com.github.cassiusbessa.vision</groupId>
+                <artifactId>common-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.cassiusbessa.vision</groupId>
                 <artifactId>user-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.cassiusbessa.vision</groupId>
                 <artifactId>user-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.cassiusbessa.vision</groupId>
+                <artifactId>user-application-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

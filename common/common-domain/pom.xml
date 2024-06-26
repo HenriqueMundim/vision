@@ -13,5 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>common-domain-core</module>
+        <module>common-application-service</module>
     </modules>
 </project>
