@@ -6,7 +6,9 @@ public interface ProfileService {
 
     ProfileCreatedResponse createProfile(ProfileCreateCommand command);
 
-    ProfileUpdateCommand updateProfile(ProfileUpdateCommand command);
+    ProfileUpdatedResponse updateProfile(ProfileUpdateCommand command);
 
     LoadProfileResponse loadProfileById(LoadProfileByIdQuery query);
+
+    LoadProfileResponse loadProfileByAccountId(LoadProfileByAccountIdQuery query);
 }

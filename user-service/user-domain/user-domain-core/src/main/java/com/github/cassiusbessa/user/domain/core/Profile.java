@@ -62,6 +62,10 @@ public class Profile extends AggregateRoot<ProfileId> {
         return failureMessages;
     }
 
+    public String getFailureMessagesAsString() {
+        return String.join(", ", failureMessages);
+    }
+
     public void validate() {
         if (name.length() < 3 || name.length() > 50 || name.isBlank()){
             failureMessages.add("Name must be between 3 and 50 characters");

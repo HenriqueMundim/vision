@@ -7,9 +7,11 @@ import com.github.cassiusbessa.vision.common.domain.core.valueobjects.AccountId;
 import com.github.cassiusbessa.vision.common.domain.core.valueobjects.Email;
 import com.github.cassiusbessa.vision.common.domain.core.valueobjects.Password;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
+@Component
 public class AccountDataMapper {
 
     private final CryptoService cryptoService;
