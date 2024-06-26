@@ -41,6 +41,10 @@ public class Account extends AggregateRoot<AccountId> {
         return failureMessages;
     }
 
+    public String getFailureMessagesAsString() {
+        return String.join(", ", failureMessages);
+    }
+
     public void validate() {
         if (email == null || email.getValue().isEmpty()) {
             failureMessages.add("Email is required");
@@ -51,6 +55,10 @@ public class Account extends AggregateRoot<AccountId> {
         if (accountLevel == null) {
             failureMessages.add("Account level is required");
         }
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
     public static final class Builder {

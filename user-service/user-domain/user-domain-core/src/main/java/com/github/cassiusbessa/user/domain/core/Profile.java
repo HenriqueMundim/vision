@@ -30,6 +30,10 @@ public class Profile extends AggregateRoot<ProfileId> {
 
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public String getName() {
         return name;
     }
