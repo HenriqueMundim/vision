@@ -24,6 +24,7 @@
 
     <modules>
         <module>common</module>
+        <module>user-service</module>
     </modules>
 
     <dependencies>
@@ -42,7 +43,27 @@
         <dependencies>
             <dependency>
                 <groupId>com.github.cassiusbessa.vision</groupId>
+                <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.cassiusbessa.vision</groupId>
+                <artifactId>common-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.cassiusbessa.vision</groupId>
                 <artifactId>common-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.cassiusbessa.vision</groupId>
+                <artifactId>user-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.cassiusbessa.vision</groupId>
+                <artifactId>user-domain-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
