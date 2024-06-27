@@ -36,6 +36,12 @@ public class AccountServiceImpl implements AccountService {
     public AccountCreatedResponse createAccount(AccountCreateCommand command) {
         log.info("Creating account with email: {}", command.getEmail());
 
+        Account foundAccount = accountRepository.findByEmail(command.getEmail()).orElse(null);
+        if (foundAccount != null) {
+            log.error("Account already exists with email: {}", command.getEmail());
+            return new AccountCreatedResponse("Account already exists with email: " + command.getEmail());
+        }
+
         Account account = accountDataMapper.createAccountCommandToAccount(command);
 
         account.validate();

@@ -24,6 +24,12 @@ public class ProfileServiceImpl implements ProfileService {
     public ProfileCreatedResponse createProfile(ProfileCreateCommand command) {
         log.info("Creating profile with name: {} to this account: {}", command.getName(), command.getAccountId());
 
+        Profile foundProfile = profileRepository.findByAccountId(command.getAccountId()).orElse(null);
+        if (foundProfile != null) {
+            log.error("Profile already exists for this account: {}", command.getAccountId());
+            return new ProfileCreatedResponse("Profile already exists for this account");
+        }
+
         Profile profile = profileDataMapper.createProfileCommandToProfile(command);
 
         profile.validate();
