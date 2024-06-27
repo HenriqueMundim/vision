@@ -8,7 +8,7 @@ import com.github.cassiusbessa.vision.user.application.service.mapper.AccountDat
 import com.github.cassiusbessa.vision.user.application.service.ports.input.AccountService;
 import com.github.cassiusbessa.vision.user.application.service.ports.output.AccountRepository;
 import com.github.cassiusbessa.vision.user.application.service.services.crypto.CryptoService;
-import com.github.cassiusbessa.common.application.service.TokenService;
+import com.github.cassiusbessa.vision.common.application.service.TokenService;
 import com.github.cassiusbessa.vision.user.domain.core.Account;
 
 import lombok.extern.slf4j.Slf4j;

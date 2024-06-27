@@ -1,4 +1,4 @@
-package com.github.cassiusbessa.common.application.service;
+package com.github.cassiusbessa.vision.common.application.service;
 
 import java.util.Date;
 import java.util.UUID;
