@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/common/common-domain-core/pom.xml" />
         <option value="$PROJECT_DIR$/common/common-domain/pom.xml" />
         <option value="$PROJECT_DIR$/common/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service/user-container/pom.xml" />
       </list>
     </option>
   </component>
