@@ -4,9 +4,11 @@ import com.github.cassiusbessa.vision.common.dataaccess.account.entities.Account
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 public interface AccountJpaRepository extends JpaRepository<AccountDataBaseEntity, UUID>{
 
+    Optional<AccountDataBaseEntity> findByEmail(String email);
 }
