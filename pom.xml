@@ -76,6 +76,10 @@
                 <artifactId>user-application-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.cassiusbessa.vision</groupId>
+                <artifactId>user-application</artifactId>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

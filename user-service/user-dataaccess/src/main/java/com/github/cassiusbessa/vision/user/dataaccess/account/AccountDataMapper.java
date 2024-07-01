@@ -16,7 +16,7 @@ public class AccountDataMapper {
         Email email = new Email(accountDb.getEmail());
         Password password = new Password(accountDb.getPassword());
         AccountId accountId = new AccountId(accountDb.getId());
-        return new Account(accountId, email, password, AccountLevel.FREE);
+        return new Account(accountId, email, password, accountDb.getAccountLevel());
     }
 
     public AccountDataBaseEntity accountDomainToAccountDbEntity(Account account) {
@@ -24,6 +24,7 @@ public class AccountDataMapper {
         accountDb.setId(account.getId().getValue());
         accountDb.setEmail(account.getEmail().getValue());
         accountDb.setPassword(account.getPassword().getValue());
+        accountDb.setAccountLevel(account.getAccountLevel());
         return accountDb;
     }
 }

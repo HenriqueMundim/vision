@@ -17,8 +17,8 @@ public class DataAccessConfig {
     public DataSource dataSource() {
         return DataSourceBuilder.create()
                 .url("jdbc:postgresql://localhost:5432/vision")
-                .username("your_username")
-                .password("your_password")
+                .username("root")
+                .password("root")
                 .driverClassName("org.postgresql.Driver")
                 .build();
     }
@@ -27,7 +27,7 @@ public class DataAccessConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.github.cassiusbessa.vision.common.dataaccess");
+        em.setPackagesToScan("com.github.cassiusbessa.vision.*");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties properties = new Properties();
